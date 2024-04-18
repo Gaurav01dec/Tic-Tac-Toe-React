@@ -7,8 +7,17 @@ const initialGameBoard = [
 ]
 
 export default function Gameboard({ onSelectSquare, activePlayerSymbol }) {
+
+    
+
     const [winner, setWinner] = useState();
     const [gameBoard, setGameBoard] = useState(initialGameBoard)
+
+
+    const resetGame =()=>{
+        setGameBoard(initialGameBoard);
+        setWinner();
+    }
 
     function handleSelectSquare(rowIndex, colIndex) {
 
@@ -64,6 +73,7 @@ export default function Gameboard({ onSelectSquare, activePlayerSymbol }) {
                 ))}
             </ol>
             {winner?winner+' Won':null}
+            <button onClick={resetGame}>Reset</button>
         </>
     )
 };
