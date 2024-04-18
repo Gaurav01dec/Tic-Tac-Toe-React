@@ -1,5 +1,4 @@
 import { useState,useEffect } from "react"
-// import Winner from "./Winner"
 
 const initialGameBoard = [
     [null, null, null],
@@ -13,9 +12,7 @@ export default function Gameboard({ onSelectSquare, activePlayerSymbol }) {
 
     function handleSelectSquare(rowIndex, colIndex) {
 
-        // const [winner, setWinner] = useState("NA");
         setGameBoard((prevGameBoard) => {
-            // debugger;
             const updatedBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
             updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
 
@@ -23,21 +20,8 @@ export default function Gameboard({ onSelectSquare, activePlayerSymbol }) {
             return updatedBoard;
         })
         
-        // console.log(gameBoard);
         onSelectSquare();
-        // debugger;
-       
-        // winnerCHecker(gameBoard);
-
-        // console.log(` winner : ${winner}`);
-
-        // else {
-        //     setWinner("match draw")
-        // }
-
     }
-
-    // const textArea = <h1>........</h1>
 
     function checkifxiswinner(gameBoard) {
         if ((gameBoard[0][0] === 'X' && gameBoard[0][1] === 'X' && gameBoard[0][2] === 'X') || (gameBoard[1][0] === 'X' && gameBoard[1][1] === 'X' && gameBoard[1][2] === 'X') || (gameBoard[2][0] === 'X' && gameBoard[2][1] === 'X' && gameBoard[2][2] === 'X') || (gameBoard[0][0] === 'X' && gameBoard[1][0] === 'X' && gameBoard[2][0] === 'X') || (gameBoard[0][1] === 'X' && gameBoard[1][1] === 'X' && gameBoard[2][1] === 'X') || (gameBoard[0][2] === 'X' && gameBoard[1][2] === 'X' && gameBoard[2][2] === 'X') || (gameBoard[0][0] === 'X' && gameBoard[1][1] === 'X' && gameBoard[2][2] === 'X') || (gameBoard[0][2] === 'X' && gameBoard[1][1] === 'X' && gameBoard[2][0] === 'X')) {
@@ -57,11 +41,6 @@ export default function Gameboard({ onSelectSquare, activePlayerSymbol }) {
             setWinner("O");
         }
 
-        // if (winner === "X") {
-        //     textArea = <h1>X is winner</h1>
-        // } else if (winner === 'O') {
-        //     textArea = <h1>O is winner</h1>
-        // }
     }
 
 
@@ -84,7 +63,6 @@ export default function Gameboard({ onSelectSquare, activePlayerSymbol }) {
                     </li>
                 ))}
             </ol>
-            {console.log(winner)}
             {winner?winner+' Won':null}
         </>
     )
