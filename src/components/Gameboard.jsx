@@ -49,7 +49,6 @@ export default function Gameboard({ onSelectSquare, activePlayerSymbol }) {
         } else if (checkifoiswinner(gameBoard)) {
             setWinner("O");
         }
-
     }
 
 

@@ -10,7 +10,6 @@ function App() {
   
 
 
-  const [gameTurns,setGameTurns] = useState([])
 const [activePlayer,setActivePlayer] = useState("X")
 
 function handleSelectSquare(){

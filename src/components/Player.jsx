@@ -3,8 +3,7 @@ import { useState } from "react"
 export default function Player({ initialName, logo, isActive }) {
 
     // i want to extract the name of player and share it to Gameboard.jsx so that after winning i can share name of x and o
-
-
+    // so i am lifting state up ...
 
 
 
