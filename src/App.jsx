@@ -5,11 +5,6 @@ import { useState } from "react"
 
 function App() {
 
-
-  //retrieving player data
-  
-
-
 const [activePlayer,setActivePlayer] = useState("X")
 
 function handleSelectSquare(){
